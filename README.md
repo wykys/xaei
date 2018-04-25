@@ -2,8 +2,8 @@
 The program analyzes a text file obtained using OCR test photos and generates HTML with questions.
 
 ## Results
-[ ] [test1 - 143097T706](https://htmlpreview.github.io/?https://github.com/wykys/xaei/blob/master/html/test1.htm)
-[ ] [test2 - 1455781500](https://htmlpreview.github.io/?https://github.com/wykys/xaei/blob/master/html/test2.htm)
+- [ ] [test1 - 143097T706](https://htmlpreview.github.io/?https://github.com/wykys/xaei/blob/master/html/test1.html)
+- [ ] [test2 - 1455781500](https://htmlpreview.github.io/?https://github.com/wykys/xaei/blob/master/html/test2.html)
 
 ## Installation
 ```
