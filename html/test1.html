@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="author" content="wykys - Jan Vykydal">
+        <title>XAI</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <style>
+            body {
+                color: #ccc;
+                background: #212121;
+                font-size: 1.5em;
+            }
+            .res {
+                color: green;
+            }
+            .dic {
+                color: #555555;
+            }
+            body>ol>li {
+                padding-bottom: 1em;
+            }
+            body>ol>li>ol {
+                color: orange;
+            }
+        </style>
+
+        <script>
+            $(document).ready(function(){
+                function quest(question, a, b, c, d, solution){
+                    if (arguments[solution]){
+                        if (typeof(arguments[solution]) == typeof([])){
+                            sol = arguments[solution][0]
+                        }
+                        else {
+                            sol = arguments[solution]
+                        }
+                        question =  question.replace('...','<span class="res">' + sol + '</span>');
+                    }
+
+                    function choice(data){
+                        if (typeof(data) == typeof([])){
+                            return data[0] + '<span class="dic"> - ' + data[1] + '</span>';
+                        }
+                        return data
+                    }
+
+                    var code = '';
+                    code += '<li>';
+                    code += question;
+                    code += '<ol type="A">';
+                    code += '<li>' + choice(a) + '</li>';
+                    code += '<li>' + choice(b) + '</li>';
+                    code += '<li>' + choice(c) + '</li>';
+                    code += '<li>' + choice(d) + '</li>';
+                    code += '</ol>';
+                    code += '</li>';
+
+                    $('body > ol').append(code);
+                }
+
+                // QUEST   1
+                quest("Momentary rise followed by a fall is called a ... .",
+                    ["drop", "pokles"],["range", "rozsah"],["blip", "výkyv"], ["peak", "špička"], 4
+                );
+
+                // QUEST   2
+                quest("To ... the device to function, it receives at least 3 signals simultaneously .",
+                    ["possible", "možný"],["drift", "posun"],["allow", "umožnit"],["prevents", "znemožnit"], 3
+                );
+
+                // QUEST   3
+                quest("... to the power, what will the maximum output be?",
+                    ["Concerning", "Týkající se"],["regards", "Zdraví (pozdrav)"],["With regard", "s ohledem"],["Regarding", "Týkající se"], 3
+                );
+
+                // QUEST   4
+                quest("Asbestos is a/an ... material It was used as fire protection .",
+                    ["non-flammable", "nehořlavý"],["inflammable", "vznětlivý"],["flammable", "hořlavý"],["disflammable", "nehořlavý - nedává smysl"], 1
+                );
+
+                // QUEST   5
+                quest("Resisting friction is essential - nezbytná. The key requirement is ... resistance.",
+                    ["durable", "odlný"],["abrasion", "tření"],["effected", ""],["toughness", "tuhost"], 2
+                );
+
+                // QUEST   6
+                quest("A rectangle with four sides of equal length is a ... .",
+                    ["square", ""],["triangle", ""],["circle", ""],["cylinder", ""], 1
+                );
+
+                // QUEST   7
+                quest("There are two plastic ridges - výstupky na zásuvce which slot into corresponding ... .",
+                    ["cylinders", ""],["fuse", ""],["grooves", "dzážky na zásuvce"],["pins", ""], 3
+                );
+
+                // QUEST   8
+                quest("IT WILL COST PEANUTS means IT WILL BE ... .",
+                    ["borderline", "hraniční"],["a painstaking job", "hrozná práce"],["dead easy", "hodně jednoduché"],["unfeasible", "nemožné"], 3
+                );
+
+                // QUEST   9
+                quest("Which is NOT a synonymic expression - výraz to I EXPECTED ? ... .",
+                    ["I thought", "myslel"],["I learned the hard way", "náročné"],["I predicted", "předpověděl"],["I anticipated", "očekávat"], 2
+                );
+
+                // QUEST  10
+                quest("The offshore - pobřeží base station would be supported by a ... structure.",
+                    ["flood", "povodně"],["floating", "ploucí"],["floated", "plaval"],["float", "plave"], 2
+                );
+
+                // QUEST  11
+                quest("Electrical charge is extremely difficult - náročný to store in large amounts, you cannot just ... huge batteries.",
+                    ["charger", "nabíječka"],["change up", "změna"],["charge up", "nabít"],["chargeable", "nabíjitelný"], 3
+                );
+
+                // QUEST  12
+                quest("The two metal pieces are held together by bolts and ... .",
+                    ["screws", ""],["nuts", ""],["mothers", ""],["springs", ""], 2
+                );
+
+                // QUEST  13
+                quest("The negative of OPERABLE - provozuschopný is' ... .",
+                    ["imoperable", ""],["inoperable", ""],["disoperable", ""],["unoperable", ""], 2
+                );
+
+                // QUEST  14
+                quest("Galvanized steel is an alloy - slitina coated ... zinc.",
+                    ["off", ""],["in", ""],["of", ""],["with", ""], 4
+                );
+
+                // QUEST  15
+                quest("Trials to compare two different solutions ... in the same conditions.",
+                    ["the acid - kyselina test", ""],["mock-up", ""],["back-to-bac* testing", ""],["ful-scale testing", ""], 3
+                );
+
+                // QUEST  16
+                quest("The air filter is full of dirt - prach ... It is completely ... .",
+                    ["ran over", "přetížený"],["worked loose", "volný"],["leaking out", "únikající"],["clogged up", "ucpaný"], 4
+                );
+
+                // QUEST  17
+                quest("Electrical engineering generaly ... with the study and application of electricity, electronics and eledromatgnetwn .",
+                    ["concentrates", "koncenturje"],["focuses", "zaměřuje"],["discusses", "diskutuje"],["deals", "zabýváse"], 4
+                );
+
+                // QUEST  18
+                quest("The damage occurred - výskyt ... a problem relating to temperature.",
+                    ["due with", "-"],["resulting on", "vyústující"],["due to", "kvůli"],["because off", "zdůvodu"], 2
+                );
+
+                // QUEST  19
+                quest("A tenuous - hodně tenký conductor (as of carbon or metal) made incandescent by the passage - průchod of an electric current is ... .",
+                    ["brightness", "jas"],["glow", "zářit"],["bulb", "zárovka"],["filament", "vlákno"], 4
+                );
+
+                // QUEST  20
+                quest("The sensor detects smoke and ... the alarm.",
+                    ["senses", ""],["sets back", ""],["regulates", ""],["triggers", ""], 4
+                );
+            });
+        </script>
+    </head>
+    <body>
+        <p>Před <b>to</b> nemůže být <b>ing</b></p>
+        <ol></ol>
+        <a href="https://www.onlineocr.net/">OCR</a>
+    </body>
+</html>

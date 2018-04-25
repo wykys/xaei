@@ -15,7 +15,7 @@ if __name__ == '__main__':
         '--file',
         dest='path',
         action='store',
-        default='pokus.txt',
+        default='test1.txt',
         help='destination text with test',
     )
 
