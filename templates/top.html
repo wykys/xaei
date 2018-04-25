@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="author" content="wykys - Jan Vykydal">
+        <title>XAI</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <style>
+            body {
+                color: #ccc;
+                background: #212121;
+                font-size: 1.5em;
+            }
+            .res {
+                color: green;
+            }
+            .dic {
+                color: #555555;
+            }
+            body>ol>li {
+                padding-bottom: 1em;
+            }
+            body>ol>li>ol {
+                color: orange;
+            }
+        </style>
+
+        <script>
+            $(document).ready(function(){
+                function quest(question, a, b, c, d, solution){
+                    if (arguments[solution]){
+                        if (typeof(arguments[solution]) == typeof([])){
+                            sol = arguments[solution][0]
+                        }
+                        else {
+                            sol = arguments[solution]
+                        }
+                        question =  question.replace('...','<span class="res">' + sol + '</span>');
+                    }
+
+                    function choice(data){
+                        if (typeof(data) == typeof([])){
+                            return data[0] + '<span class="dic"> - ' + data[1] + '</span>';
+                        }
+                        return data
+                    }
+
+                    var code = '';
+                    code += '<li>';
+                    code += question;
+                    code += '<ol type="A">';
+                    code += '<li>' + choice(a) + '</li>';
+                    code += '<li>' + choice(b) + '</li>';
+                    code += '<li>' + choice(c) + '</li>';
+                    code += '<li>' + choice(d) + '</li>';
+                    code += '</ol>';
+                    code += '</li>';
+
+                    $('body > ol').append(code);
+                }

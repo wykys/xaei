@@ -19,10 +19,10 @@ if __name__ == '__main__':
         help='destination text with test',
     )
 
-    with open('top.html', 'r') as fr:
+    with open('templates/top.html', 'r') as fr:
         html_top = fr.read()
 
-    with open('bot.html', 'r') as fr:
+    with open('templates/bot.html', 'r') as fr:
         html_bot = fr.read()
 
     try:
