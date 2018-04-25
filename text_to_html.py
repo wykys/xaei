@@ -15,7 +15,7 @@ if __name__ == '__main__':
         '--file',
         dest='path',
         action='store',
-        default='test1.txt',
+        default='txt/test1.txt',
         help='destination text with test',
     )
 

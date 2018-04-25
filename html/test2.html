@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="author" content="wykys - Jan Vykydal">
+        <title>XAI</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <style>
+            body {
+                color: #ccc;
+                background: #212121;
+                font-size: 1.5em;
+            }
+            .res {
+                color: green;
+            }
+            .dic {
+                color: #555555;
+            }
+            body>ol>li {
+                padding-bottom: 1em;
+            }
+            body>ol>li>ol {
+                color: orange;
+            }
+        </style>
+
+        <script>
+            $(document).ready(function(){
+                function quest(question, a, b, c, d, solution){
+                    if (arguments[solution]){
+                        if (typeof(arguments[solution]) == typeof([])){
+                            sol = arguments[solution][0]
+                        }
+                        else {
+                            sol = arguments[solution]
+                        }
+                        question =  question.replace('...','<span class="res">' + sol + '</span>');
+                    }
+
+                    function choice(data){
+                        if (typeof(data) == typeof([])){
+                            return data[0] + '<span class="dic"> - ' + data[1] + '</span>';
+                        }
+                        return data
+                    }
+
+                    var code = '';
+                    code += '<li>';
+                    code += question;
+                    code += '<ol type="A">';
+                    code += '<li>' + choice(a) + '</li>';
+                    code += '<li>' + choice(b) + '</li>';
+                    code += '<li>' + choice(c) + '</li>';
+                    code += '<li>' + choice(d) + '</li>';
+                    code += '</ol>';
+                    code += '</li>';
+
+                    $('body > ol').append(code);
+                }
+
+                // QUEST   1
+                quest("The range on a dart is defined by its peaks and ... .",
+                    ["trouts", ""],["demand", ""],["throughs", ""],["troughs", ""]
+                );
+
+                // QUEST   2
+                quest("In order to function the GPS ... needs at least three signals .",
+                    ["receiver", ""],["dedicate", ""],["Perceiver", ""],["obtainer", ""]
+                );
+
+                // QUEST   3
+                quest("The explosion was much stronger than we had thought -- it ... our expectations .",
+                    ["exceeded", ""],["overestimated", ""],["anticipated", ""],["underestimated", ""]
+                );
+
+                // QUEST   4
+                quest("They forgot to take into account the tiles which in the pool being too short ... .",
+                    ["consequenced", ""],["resulted", ""],["lead", ""],["led", ""]
+                );
+
+                // QUEST   5
+                quest("Applications concerned with navigation and safety at sea are called ... applications .",
+                    ["maritime", ""],["highway", ""],["merry-go-round", ""],["mining", ""]
+                );
+
+                // QUEST   6
+                quest("The only may to ... how much acceleration is needed is to carry out a simulation.",
+                    ["cerlasnify 6) determine", ""],["amount", ""],["access", ""]
+                );
+
+                // QUEST   7
+                quest("The key ... for the material is thermal stability .",
+                    ["question", ""],["requirement", ""],["ask", ""],["task", ""]
+                );
+
+                // QUEST   8
+                quest("The biggest challenge of space elevators is to ... objects into space.",
+                    ["nse", ""],["descend", ""],["raise", ""],["ascend", ""]
+                );
+
+                // QUEST   9
+                quest("The sensor ... any movement in the building .",
+                    ["triggers", ""],["sets off", ""],["picks out 0) picks up", ""]
+                );
+
+                // QUEST  10
+                quest("A nut worked ... on a pipe, which resulted into a leakage.",
+                    ["loose", ""],["loss", ""],["lost", ""],["lose", ""]
+                );
+
+                // QUEST  11
+                quest("Glass tableware can contain ... of metal.",
+                    ["traces", ""],["tracks", ""],["edges", ""],["footsteps", ""]
+                );
+
+                // QUEST  12
+                quest("Exposure of skin to a corrosive may cause ... .",
+                    ["rashes", ""],["maintenance", ""],["burns", ""],["asphyxiation", ""]
+                );
+
+                // QUEST  13
+                quest("no circumstances should anyone be able to access the area. ... .",
+                    ["Under", ""],["Below", ""],["In", ""],["On", ""]
+                );
+
+                // QUEST  14
+                quest("The word 'play' can refer to the ... between a rod and the hole in which it sits.",
+                    ["amount of ridges", ""],["number of bolts", ""],["number of space", ""],["amount of space", ""]
+                );
+
+                // QUEST  15
+                quest("Passengers' lives may depend on how tightly nuts are screwed onto ... .",
+                    ["bolts", ""],["welds", ""],["adhesives", ""],["clips", ""]
+                );
+
+                // QUEST  16
+                quest("The leakage of liquids is usually prevented by ... .",
+                    ["lifespan", ""],["abrasion", ""],["decelaration", ""],["sealing", ""]
+                );
+
+                // QUEST  17
+                quest("Rather than being ... with the front of the socket, the area that receives the plug is set back a little.",
+                    ["rectangular", ""],["flush", ""],["cylindrical", ""],["flushed", ""]
+                );
+
+                // QUEST  18
+                quest("One of the tasks of an electrical supervisor is to ... for electrical maintenance.",
+                    ["issue permits", ""],["essential", ""],["write permissions", ""],["issue lock-outs", ""]
+                );
+
+                // QUEST  19
+                quest("Theoretical considerations need to be ... by being tested in practice.",
+                    ["virtual", ""],["mocked up", ""],["validated", ""],["valued", ""]
+                );
+
+                // QUEST  20
+                quest("Nobody noticed that the tyre pressures on that block were ... to the rest of the aircraft.",
+                    ["inproportionate", ""],["disproportionate", ""],["unadequate", ""],["malsufficient", ""]
+                );
+            });
+        </script>
+    </head>
+    <body>
+        <ol></ol>
+        <a href="https://www.onlineocr.net/">OCR</a>
+    </body>
+</html>
