@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="author" content="wykys">
+        <title>XAEI</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <style>
+            body {
+                color: #ccc;
+                background: #212121;
+                font-size: 1.5em;
+            }
+            .res {
+                color: green;
+            }
+            .dic {
+                color: #555555;
+            }
+            body>ol>li {
+                padding-bottom: 1em;
+            }
+            body>ol>li>ol {
+                color: orange;
+            }
+        </style>
+
+        <script>
+            $(document).ready(function(){
+                function quest(question, a, b, c, d, solution){
+                    if (arguments[solution]){
+                        if (typeof(arguments[solution]) == typeof([])){
+                            sol = arguments[solution][0]
+                        }
+                        else {
+                            sol = arguments[solution]
+                        }
+                        question =  question.replace('...','<span class="res">' + sol + '</span>');
+                    }
+
+                    function choice(data){
+                        if (typeof(data) == typeof([])){
+                            return data[0] + '<span class="dic"> - ' + data[1] + '</span>';
+                        }
+                        return data
+                    }
+
+                    var code = '';
+                    code += '<li>';
+                    code += question;
+                    code += '<ol type="A">';
+                    code += '<li>' + choice(a) + '</li>';
+                    code += '<li>' + choice(b) + '</li>';
+                    code += '<li>' + choice(c) + '</li>';
+                    code += '<li>' + choice(d) + '</li>';
+                    code += '</ol>';
+                    code += '</li>';
+
+                    $('body > ol').append(code);
+                }
+
+                // QUEST   1
+                quest("Electrical charge is extremely difficult to store in large amounts, you cannot just ... huge batteries .",
+                    ["charger 8) change up", ""],["chargel up", ""],["chargeable", ""]
+                );
+
+                // QUEST   2
+                quest("The two metal pieces are hekl together by bolls and ... .",
+                    ["saews 8) nuts", ""],["mothers", ""],["springsimis■", ""]
+                );
+
+                // QUEST   3
+                quest("The negative of OPERABLE is? ... .",
+                    ["A)imoperable", ""],["inoperable", ""],["disoperable", ""],["unoperable", ""]
+                );
+
+                // QUEST   4
+                quest("Galvanized steel is an alloy coated ... zinc.",
+                    ["off", ""],["in", ""],["of", ""],["with", ""]
+                );
+
+                // QUEST   5
+                quest("Trials to compare two different solutions, in the same conditions. ... .",
+                    ["the add test 8) mock.up", ""],["back-to-back testing", ""],["rule testing", ""]
+                );
+
+                // QUEST   6
+                quest("The air filler is full of dirt ... ft is completely ... .",
+                    ["ran over 8) worked loose", ""],["leaking out 0) dogged up", ""]
+                );
+
+                // QUEST   7
+                quest("Eiectncal engineenng generally ... with the ... study and appication of electricity, electrorscs and elacimmairialigam .",
+                    ["concentrates Et) focuses C ) discusses", ""],["deals", ""]
+                );
+
+                // QUEST   8
+                quest("The damage occurred ... a problem relating to temperature.",
+                    ["due with", ""],["resulting on C=1 0) because off", ""]
+                );
+
+                // QUEST   9
+                quest("A tenuous conductor (as of carbon or metal) made ',candescent by the passage of en electric miner** ... .",
+                    ["brightness", ""],["glow", ""],["bulb", ""],["filament", ""]
+                );
+
+                // QUEST  10
+                quest("The sensor detects smoke and ... the alarm.",
+                    ["senses", ""],["sets beck", ""],["regulates 0) triggers", ""]
+                );
+            });
+        </script>
+    </head>
+    <body>
+        <ol></ol>
+        <a href="https://www.onlineocr.net/">OCR</a>
+    </body>
+</html>

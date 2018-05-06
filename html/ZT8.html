@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="author" content="wykys">
+        <title>XAEI</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <style>
+            body {
+                color: #ccc;
+                background: #212121;
+                font-size: 1.5em;
+            }
+            .res {
+                color: green;
+            }
+            .dic {
+                color: #555555;
+            }
+            body>ol>li {
+                padding-bottom: 1em;
+            }
+            body>ol>li>ol {
+                color: orange;
+            }
+        </style>
+
+        <script>
+            $(document).ready(function(){
+                function quest(question, a, b, c, d, solution){
+                    if (arguments[solution]){
+                        if (typeof(arguments[solution]) == typeof([])){
+                            sol = arguments[solution][0]
+                        }
+                        else {
+                            sol = arguments[solution]
+                        }
+                        question =  question.replace('...','<span class="res">' + sol + '</span>');
+                    }
+
+                    function choice(data){
+                        if (typeof(data) == typeof([])){
+                            return data[0] + '<span class="dic"> - ' + data[1] + '</span>';
+                        }
+                        return data
+                    }
+
+                    var code = '';
+                    code += '<li>';
+                    code += question;
+                    code += '<ol type="A">';
+                    code += '<li>' + choice(a) + '</li>';
+                    code += '<li>' + choice(b) + '</li>';
+                    code += '<li>' + choice(c) + '</li>';
+                    code += '<li>' + choice(d) + '</li>';
+                    code += '</ol>';
+                    code += '</li>';
+
+                    $('body > ol').append(code);
+                }
+
+                // QUEST   1
+                quest("fool, of 13 ... .",
+                    ["'awe of", ""],["due to Mowing.", ""]
+                );
+
+                // QUEST   2
+                quest("Components :km rarely joined ... .",
+                    [". each other in ideal conditions.", ""]
+                );
+
+                // QUEST   3
+                quest("A) at B) into C) to D) tbr ... .",
+                    ["3. The SCSiSt311", ""],["(0 problems caused by friction is called ....", ""]
+                );
+
+                // QUEST   4
+                quest("A) abrasion resistance 13) durability C) thermal stability D) toughness ... .",
+                    ["4.", ""],["its name suggests, a space elevator is designed to .... things into space", ""]
+                );
+
+                // QUEST   5
+                quest("A) rise B) high el raise 0) chinb ... .",
+                    [".1;\')'s1;;`,::,),,Z);)nr,r47,4,>d;:j,: restricted", ""]
+                );
+
+                // QUEST   6
+                quest("== con, ... .",
+                    ["G. Find a synonym for the word MEASUREMLNT.", ""]
+                );
+
+                // QUEST   7
+                quest("A) sensor B) leading C) 'activator D) trigger ... .",
+                    ["7. Dynamic controls work by detecting slight .... in the frequency of the mains A", ""]
+                );
+
+                // QUEST   8
+                quest("A) blips B) pc ... demand C) fluctuations D) range .",
+                    ["S. Something is stopping the oil flow. The pipe might", ""]
+                );
+
+                // QUEST   9
+                quest(". ... .",
+                    ["worked loose", ""],["wom out () blocked up", ""],["leaking out", ""]
+                );
+
+                // QUEST  10
+                quest("A practical test of something new or unknown to discover its effectiveness is c ... .",
+                    ["mock-up 13) trial run", ""],["back-to.back testing", ""],["acid test", ""]
+                );
+
+                // QUEST  11
+                quest(",This is a ... .",
+                    ["You need to wear gloves and eye protection, and a mask for prot,", ""]
+                );
+
+                // QUEST  12
+                quest("the fines. ... .",
+                    ["flammable", ""],["confined space", ""],["CO2 detector", ""],["corrosive substance", ""]
+                );
+
+                // QUEST  13
+                quest("ij.ki;;Iii1,1coyBrn)abdreofrrizoent c.c.o)pictoei;ianpd)tilletaids called ... .",
+                    ["3. Choose the right antonym for the word ASCEND.", ""]
+                );
+
+                // QUEST  14
+                quest("A) decline B) decrease C) delay D) descend ... .",
+                    [". It is crucial that there is .... key to each restricted ima,", ""]
+                );
+
+                // QUEST  15
+                quest("A) all the single B) all the time C) just a single D) every a single ... .",
+                    ["And as .... the", ""]
+                );
+            });
+        </script>
+    </head>
+    <body>
+        <ol></ol>
+        <a href="https://www.onlineocr.net/">OCR</a>
+    </body>
+</html>

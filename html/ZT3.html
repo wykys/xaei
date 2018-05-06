@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="author" content="wykys">
+        <title>XAEI</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <style>
+            body {
+                color: #ccc;
+                background: #212121;
+                font-size: 1.5em;
+            }
+            .res {
+                color: green;
+            }
+            .dic {
+                color: #555555;
+            }
+            body>ol>li {
+                padding-bottom: 1em;
+            }
+            body>ol>li>ol {
+                color: orange;
+            }
+        </style>
+
+        <script>
+            $(document).ready(function(){
+                function quest(question, a, b, c, d, solution){
+                    if (arguments[solution]){
+                        if (typeof(arguments[solution]) == typeof([])){
+                            sol = arguments[solution][0]
+                        }
+                        else {
+                            sol = arguments[solution]
+                        }
+                        question =  question.replace('...','<span class="res">' + sol + '</span>');
+                    }
+
+                    function choice(data){
+                        if (typeof(data) == typeof([])){
+                            return data[0] + '<span class="dic"> - ' + data[1] + '</span>';
+                        }
+                        return data
+                    }
+
+                    var code = '';
+                    code += '<li>';
+                    code += question;
+                    code += '<ol type="A">';
+                    code += '<li>' + choice(a) + '</li>';
+                    code += '<li>' + choice(b) + '</li>';
+                    code += '<li>' + choice(c) + '</li>';
+                    code += '<li>' + choice(d) + '</li>';
+                    code += '</ol>';
+                    code += '</li>';
+
+                    $('body > ol').append(code);
+                }
+
+                // QUEST   1
+                quest("A company the ... .",
+                    ["black 8) blue", ""],["greenY.", ""]
+                );
+
+                // QUEST   2
+                quest("~s mine ... .",
+                    ["2, I have divided my talk", ""]
+                );
+
+                // QUEST   3
+                quest("A) to 13) in c, ... • • .",
+                    ["3'I amw8brbg", ""]
+                );
+
+                // QUEST   4
+                quest("... Your advertisement° .",
+                    ["in respond toWhY clid you .            to 0) to", ""]
+                );
+
+                // QUEST   5
+                quest("t°. ... .",
+                    ["response k", ""]
+                );
+
+                // QUEST   6
+                quest("A te.1.,, ... 8) leave C) had to lealesvte'l;) .",
+                    ["5. he decided", ""]
+                );
+
+                // QUEST   7
+                quest("... • • ... rneth, .",
+                    ["A). 8) to doing", ""],["for to . 0) to d", ""]
+                );
+
+                // QUEST   8
+                quest("MY grandfather was a ve7 sever ... .",
+                    ["can 8) is allowed to                   speak four foreign languages,", ""]
+                );
+
+                // QUEST   9
+                quest("D) had ... .",
+                    ["7. It took a 'ong time before R ..........", ""]
+                );
+
+                // QUEST  10
+                quest("A) became 8) has become C) become 0) become ... .",
+                    ["8. They were unlucky        the ma..", ""]
+                );
+
+                // QUEST  11
+                quest("A) not to have win 8) to not wire C) not to win 0) to have wo ... .",
+                    ["9. If you Ike history, Yo,.         go to the Cry Museum.", ""]
+                );
+
+                // QUEST  12
+                quest("rthe ... his shares ... he would have made ... ions of Oasts .",
+                    ["have sod 8) sold", ""],["sold", ""],["nas sold", ""]
+                );
+
+                // QUEST  13
+                quest("The sponsors ... thc„ are given ... Yoram nets.",
+                    ["about mat 8) . that hrit", ""],["whim", ""]
+                );
+
+                // QUEST  14
+                quest("You ildg<c7of D) at ... .",
+                    ["7", ""]
+                );
+
+                // QUEST  15
+                quest("s of clothes do you ... .",
+                    ["Waal", ""],["Slowed", ""],["have", ""]
+                );
+
+                // QUEST  16
+                quest("better recharge all your ['intones before the %Md ... .",
+                    ["ad", ""],["would", ""],["have", ""]
+                );
+
+                // QUEST  17
+                quest("aai ... .",
+                    ["ngtodothe,...•• ....", ""]
+                );
+
+                // QUEST  18
+                quest("a) launched C) launching ... .",
+                    ["to Check in online 24 hours before the bight.", ""]
+                );
+
+                // QUEST  19
+                quest(") should C need D) Can ... .",
+                    ["ears, the production In Europe .... .   hon,to l0 rMon.", ""]
+                );
+
+                // QUEST  20
+                quest("Increased B) has increased C) had increased D) increased ... .",
+                    ["y 'in the             has more money than it owes.", ""]
+                );
+
+                // QUEST  21
+                quest("black C) blue D) red ... .",
+                    ["you got the opportunity to work abroac. what", ""]
+                );
+
+                // QUEST  22
+                quest("wouldpou ... 0) do you .",
+                    ["did you do 8) have you done", ""]
+                );
+
+                // QUEST  23
+                quest("am going to ask yes to intro.,. ... .",
+                    ["to you", ""],["you", ""],["yourselves", ""],["each to other", ""]
+                );
+            });
+        </script>
+    </head>
+    <body>
+        <ol></ol>
+        <a href="https://www.onlineocr.net/">OCR</a>
+    </body>
+</html>

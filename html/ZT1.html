@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="author" content="wykys">
+        <title>XAEI</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <style>
+            body {
+                color: #ccc;
+                background: #212121;
+                font-size: 1.5em;
+            }
+            .res {
+                color: green;
+            }
+            .dic {
+                color: #555555;
+            }
+            body>ol>li {
+                padding-bottom: 1em;
+            }
+            body>ol>li>ol {
+                color: orange;
+            }
+        </style>
+
+        <script>
+            $(document).ready(function(){
+                function quest(question, a, b, c, d, solution){
+                    if (arguments[solution]){
+                        if (typeof(arguments[solution]) == typeof([])){
+                            sol = arguments[solution][0]
+                        }
+                        else {
+                            sol = arguments[solution]
+                        }
+                        question =  question.replace('...','<span class="res">' + sol + '</span>');
+                    }
+
+                    function choice(data){
+                        if (typeof(data) == typeof([])){
+                            return data[0] + '<span class="dic"> - ' + data[1] + '</span>';
+                        }
+                        return data
+                    }
+
+                    var code = '';
+                    code += '<li>';
+                    code += question;
+                    code += '<ol type="A">';
+                    code += '<li>' + choice(a) + '</li>';
+                    code += '<li>' + choice(b) + '</li>';
+                    code += '<li>' + choice(c) + '</li>';
+                    code += '<li>' + choice(d) + '</li>';
+                    code += '</ol>';
+                    code += '</li>';
+
+                    $('body > ol').append(code);
+                }
+
+                // QUEST   1
+                quest("The air filter is full of dirt ... ft is completely .",
+                    ["ran over", ""],["cat....d up", ""],["leaking out", ""],["worked loose", ""]
+                );
+
+                // QUEST   2
+                quest("To ... the device tO function, it receives at least 3 signals simultaneously.",
+                    ["prevents", ""],["allow", ""],["possible", ""],["drift", ""]
+                );
+
+                // QUEST   3
+                quest("A ten ... conductor (as of carbon or metal) made incandescent by the passage of an electric current is ... .",
+                    ["bnghtness", ""],["filament", ""],["bulb", ""],["glow", ""]
+                );
+
+                // QUEST   4
+                quest("Resisting fnction is essential ... The key requirement is ... resistance.",
+                    ["abrasion", ""],["durable", ""],["effected", ""],["toughness", ""]
+                );
+
+                // QUEST   5
+                quest("The damage occurred ... a problem relating to temperature.",
+                    ["with", ""],["because off", ""],["due to", ""],["resulting on", ""]
+                );
+
+                // QUEST   6
+                quest("Electrical charge , extremely difficult to store in large amounts, you cannot just ... huge batten ... .",
+                    ["change up", ""],["charge up", ""],["tharger", ""],["chargeable", ""]
+                );
+
+                // QUEST   7
+                quest("Tria, to compare hvo different solutions, in the same conditions. ... .",
+                    ["back-to-back testing", ""],["full-scale testing", ""],["mock-up", ""],["the acid test", ""]
+                );
+
+                // QUEST   8
+                quest("ASbestos alan ... material ... It was used as fire protection.",
+                    ["inflammable", ""],["disflammabte", ""],["flammable", ""],["oon-flammable", ""]
+                );
+
+                // QUEST   9
+                quest("to the power ... what will the maximum output be? .",
+                    ["Con.ming", ""],["", ""],["regards", ""],["Regarding", ""],["VVith regard", ""]
+                );
+
+                // QUEST  10
+                quest("IT WILL COST PEANUTS means IT WILL BE ... .",
+                    ["a painstaking ph", ""],["unfeasible", ""],["bordedine", ""],["dead easy", ""]
+                );
+
+                // QUEST  11
+                quest("is NOT a synonymic expression to I EXPECTED ... .",
+                    ["I predict.", ""],["I anticapated", ""],["I thought", ""],["I learn. the hard way", ""]
+                );
+
+                // QUEST  12
+                quest("The sensor ... tects smoke and ... the alarm.",
+                    ["senses", ""],["regulates", ""],[".ts back", ""],["triggers", ""]
+                );
+
+                // QUEST  13
+                quest("7 ... offshore base station would be support ... by a ... structure.",
+                    ["flood", ""],["float", ""],["f-1.1.", ""],["float.", ""]
+                );
+
+                // QUEST  14
+                quest("7 ... negative of OPERABLE is? .",
+                    ["imoperable", ""],["disoperable", ""],["un0Perable", ""],["inoperabie", ""]
+                );
+
+                // QUEST  15
+                quest("A ',clang ... with four sides of equal length is a .",
+                    ["A)square", ""],["triangle", ""],["circle", ""],["cylinder", ""]
+                );
+
+                // QUEST  16
+                quest("Galvanized steel is an alloy coated ... zinc.",
+                    ["off", ""],["of", ""],["with", ""],["in", ""]
+                );
+
+                // QUEST  17
+                quest("The two metal pieces are held together by bolts and ... .",
+                    ["nuts", ""],["modiers", ""],["springs", ""],["screws", ""]
+                );
+
+                // QUEST  18
+                quest("Electrical engeniring general, ... with the study and application of electricity, electron! ... and electromatgn .",
+                    ["concentrates", ""],["focuSes", ""],["deals", ""],["discusses", ""]
+                );
+
+                // QUEST  19
+                quest("Them am two plastic ridges which slot into corresponding ... .",
+                    ["fuse B cylinders", ""],["pins", ""],["grooves", ""]
+                );
+
+                // QUEST  20
+                quest("momentary rise followed by a fall is called a ... .",
+                    ["bap", ""],["peak", ""],["drop", ""],["range", ""]
+                );
+            });
+        </script>
+    </head>
+    <body>
+        <ol></ol>
+        <a href="https://www.onlineocr.net/">OCR</a>
+    </body>
+</html>

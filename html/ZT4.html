@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="author" content="wykys">
+        <title>XAEI</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <style>
+            body {
+                color: #ccc;
+                background: #212121;
+                font-size: 1.5em;
+            }
+            .res {
+                color: green;
+            }
+            .dic {
+                color: #555555;
+            }
+            body>ol>li {
+                padding-bottom: 1em;
+            }
+            body>ol>li>ol {
+                color: orange;
+            }
+        </style>
+
+        <script>
+            $(document).ready(function(){
+                function quest(question, a, b, c, d, solution){
+                    if (arguments[solution]){
+                        if (typeof(arguments[solution]) == typeof([])){
+                            sol = arguments[solution][0]
+                        }
+                        else {
+                            sol = arguments[solution]
+                        }
+                        question =  question.replace('...','<span class="res">' + sol + '</span>');
+                    }
+
+                    function choice(data){
+                        if (typeof(data) == typeof([])){
+                            return data[0] + '<span class="dic"> - ' + data[1] + '</span>';
+                        }
+                        return data
+                    }
+
+                    var code = '';
+                    code += '<li>';
+                    code += question;
+                    code += '<ol type="A">';
+                    code += '<li>' + choice(a) + '</li>';
+                    code += '<li>' + choice(b) + '</li>';
+                    code += '<li>' + choice(c) + '</li>';
+                    code += '<li>' + choice(d) + '</li>';
+                    code += '</ol>';
+                    code += '</li>';
+
+                    $('body > ol').append(code);
+                }
+
+                // QUEST   1
+                quest("My new notebook in light and eaSy ... .",
+                    ["A to          Carrying", ""],["to Canying     canied", ""]
+                );
+
+                // QUEST   2
+                quest("Ifs ... to take money from t ... somPahY Your Pe ... , use.",
+                    ["legal 8) ',legal", ""],["", ""],["dislegal", ""]
+                );
+
+                // QUEST   3
+                quest("grandfather was a very clever man ... He ... speak four foreign languages.",
+                    ["could 8) is allowed to", ""],["had", ""],["can", ""]
+                );
+
+                // QUEST   4
+                quest("We are going to do the product ... in !ndia.",
+                    ["lunch", ""],["launched", ""],["launching", ""]
+                );
+
+                // QUEST   5
+                quest("You ... the contract ... You could earn a lot of money.",
+                    ["shot", ""],["have signed 8) wouid not sign", ""],["wo,d have      CI". sign", ""]
+                );
+
+                // QUEST   6
+                quest("C ... The rate at vfii.ch the price of goods increases by each year is .",
+                    ["oieSomPs 8) shares", ""],["inflabon 0) said,s", ""]
+                );
+
+                // QUEST   7
+                quest("S ... to follow a, the forrnal wles.",
+                    ["cannot 6) cowd", ""],["doesn't have 0) must not", ""]
+                );
+
+                // QUEST   8
+                quest("Retaiters provide oustotr,ers ... dernonstrations and advice.",
+                    ["8) of", ""],["to", ""],["in", ""]
+                );
+
+                // QUEST   9
+                quest("HO wa ... s shocked when to ... him I ... the sotution, .",
+                    ["had to.. 13)  5nd", ""],["tind 0) have found", ""]
+                );
+
+                // QUEST  10
+                quest("i You ... to check in.: ... 24 hours beta, the bight.",
+                    ["A)rmrs: 8) should", ""],["can", ""]
+                );
+
+                // QUEST  11
+                quest("Ad) 1:::••.;•t;;,;s:,;;77:17,;,s„:7°' ... .",
+                    ["fa M,tiat spectat sorts of dates do you    to wear for your Sr.,", ""]
+                );
+
+                // QUEST  12
+                quest(", had 8) have C) altowed ... roost .",
+                    ["f P.,..toti stop,.", ""]
+                );
+
+                // QUEST  13
+                quest("Co ... you ... me ... through to Mr ... Smith? .",
+                    ["take Et) put", ""],["send 0) hold", ""]
+                );
+
+                // QUEST  14
+                quest("They were unlucky ... the thatCh.",
+                    ["to nOt win", ""],["to have win", ""],["not to win 0) not to hase win", ""]
+                );
+
+                // QUEST  15
+                quest("/6 ... The raw material ... extraed and processed.",
+                    ["must to be 8) have been", ""],["has to be 0) have to be", ""]
+                );
+
+                // QUEST  16
+                quest("I h ... to ... rr, MX, ... , friend.",
+                    ["on Et) horn", ""],["to 0) off", ""]
+                );
+
+                // QUEST  17
+                quest("Do you 'rind ... on all th ... national holidays? .",
+                    [",4,1 work 8) for working", ""],["to work", ""],["working", ""]
+                );
+
+                // QUEST  18
+                quest("was wonder., ... yOu could send me some more Won't ... son.",
+                    ["whether 8) about", ""],["that", ""],["for", ""]
+                );
+
+                // QUEST  19
+                quest("If my computer crash, I ... for help.",
+                    ["ask", ""],["have asked", ""],["asked", ""],["would ask", ""]
+                );
+            });
+        </script>
+    </head>
+    <body>
+        <ol></ol>
+        <a href="https://www.onlineocr.net/">OCR</a>
+    </body>
+</html>

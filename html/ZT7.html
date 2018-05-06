@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="author" content="wykys">
+        <title>XAEI</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <style>
+            body {
+                color: #ccc;
+                background: #212121;
+                font-size: 1.5em;
+            }
+            .res {
+                color: green;
+            }
+            .dic {
+                color: #555555;
+            }
+            body>ol>li {
+                padding-bottom: 1em;
+            }
+            body>ol>li>ol {
+                color: orange;
+            }
+        </style>
+
+        <script>
+            $(document).ready(function(){
+                function quest(question, a, b, c, d, solution){
+                    if (arguments[solution]){
+                        if (typeof(arguments[solution]) == typeof([])){
+                            sol = arguments[solution][0]
+                        }
+                        else {
+                            sol = arguments[solution]
+                        }
+                        question =  question.replace('...','<span class="res">' + sol + '</span>');
+                    }
+
+                    function choice(data){
+                        if (typeof(data) == typeof([])){
+                            return data[0] + '<span class="dic"> - ' + data[1] + '</span>';
+                        }
+                        return data
+                    }
+
+                    var code = '';
+                    code += '<li>';
+                    code += question;
+                    code += '<ol type="A">';
+                    code += '<li>' + choice(a) + '</li>';
+                    code += '<li>' + choice(b) + '</li>';
+                    code += '<li>' + choice(c) + '</li>';
+                    code += '<li>' + choice(d) + '</li>';
+                    code += '</ol>';
+                    code += '</li>';
+
+                    $('body > ol').append(code);
+                }
+
+                // QUEST   1
+                quest("A 3D model simulating shape and size, but without internal components. ... .",
+                    ["the acid test", ""],["mock-up", ""],["back-to-back testing", ""],["full-scale test", ""]
+                );
+
+                // QUEST   2
+                quest("II- The dezeal burs have to be built to last ... Obviously, they need to be .",
+                    ["thermally .7..ble", ""],["tough", ""],["durable", ""],["abrasion-resistant", ""]
+                );
+
+                // QUEST   3
+                quest("Bird sznIes were a potential problem for the train ... .",
+                    ["to its speed.", ""]
+                );
+
+                // QUEST   4
+                quest("Matta the word TRIGGER to its synonymic expresssion. ... .",
+                    ["A)44ust B)sense", ""],["regulate", ""],["activate", ""]
+                );
+
+                // QUEST   5
+                quest("There is a pool of oil under the car ... Something is .",
+                    ["leaking out", ""],["run out", ""],["clogged up", ""],["blocked up", ""]
+                );
+
+                // QUEST   6
+                quest("I LEARNED THE HARD WAY means IT WAS ... .",
+                    ["a theoretical lesson", ""],["a practical lesson", ""],["adequate", ""],["what I pr", ""]
+                );
+
+                // QUEST   7
+                quest("IT WILL BE DEAD EASY means IT WILL BE ... .",
+                    ["stretching it", ""],["borderline", ""],["a painstaking Job", ""],["perfectly feasit", ""]
+                );
+
+                // QUEST   8
+                quest("An alarm sounds to prevent the boat ... drifting unnoticed.",
+                    ["21", ""],["for", ""],["from", ""],["to", ""]
+                );
+
+                // QUEST   9
+                quest("The types of connection, describing mechanical connections only, are be ... .",
+                    ["riveting", ""],["welding", ""],["fixing", ""],["bonding", ""]
+                );
+
+                // QUEST  10
+                quest("To remove or isolate from a circuit or networks. ... .",
+                    ["to resit", ""],["to replace", ""],["to disconnect", ""],["to reconnect", ""]
+                );
+
+                // QUEST  11
+                quest("T) en are two plastic ridges on either side of the plug casin, ... .",
+                    ["A oxen", ""],["covers", ""],["pins", ""],["grooves", ""]
+                );
+            });
+        </script>
+    </head>
+    <body>
+        <ol></ol>
+        <a href="https://www.onlineocr.net/">OCR</a>
+    </body>
+</html>
